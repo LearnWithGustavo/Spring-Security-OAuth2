@@ -19,7 +19,8 @@ public class SecurityConfig {
             authorizeConfig.requestMatchers("/logout").permitAll();
             authorizeConfig.anyRequest().authenticated();
         })
-//        .oauth2Login(Customizer.withDefaults()).oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))  //Ative se quiser autenticar usando JWT que foi gerado pelo Google tambem, atraves de um requisição
+        .oauth2Login(Customizer.withDefaults())
+//        .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))  //Ative se quiser autenticar usando JWT que foi gerado pelo Google tambem, atraves de um requisição
         .build();
     };
 }
